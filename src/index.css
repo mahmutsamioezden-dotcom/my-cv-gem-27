@@ -114,53 +114,24 @@
 
 @layer components {
   .section-container {
-    @apply max-w-5xl mx-auto px-6 md:px-8;
+    @apply max-w-4xl mx-auto px-6 md:px-8;
   }
+}
 
-  .section-title {
-    @apply text-3xl md:text-4xl font-display font-semibold text-foreground mb-2;
+/* Print Styles */
+@media print {
+  body {
+    font-size: 11pt;
+    line-height: 1.4;
   }
-
-  .section-subtitle {
-    @apply text-muted-foreground text-lg mb-10;
+  
+  .section-container {
+    max-width: 100%;
+    padding: 0 1rem;
   }
-
-  .experience-card {
-    @apply relative pl-8 pb-10 border-l-2 border-border last:pb-0;
-  }
-
-  .experience-card::before {
-    content: '';
-    @apply absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-accent border-4 border-background;
-    box-shadow: 0 0 0 2px hsl(var(--accent));
-  }
-
-  .skill-tag {
-    @apply inline-flex items-center px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium transition-all duration-300;
-  }
-
-  .skill-tag:hover {
-    @apply bg-primary text-primary-foreground;
-  }
-
-  .nav-link {
-    @apply text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200;
-  }
-
-  .nav-link-active {
-    @apply text-foreground;
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
-  }
-
-  .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+  
+  section {
+    page-break-inside: avoid;
   }
 }
 

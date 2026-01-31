@@ -1,30 +1,27 @@
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
-
 const experiences = [
   {
     title: 'Principal Specialist, Procurement',
     company: 'B/E Aerospace Systems GmbH',
     location: 'Lübeck',
     period: 'Jul 2024 – Present',
-    responsibilities: [
-      'Qualified and evaluated suppliers for critical aerospace products (parts, components, avionics-related items).',
-      'Managed supplier compliance and documentation in regulated environments (AS9100, FAA, EASA).',
-      'Owned supplier performance tracking (quality, delivery, cost) and KPI reporting for management.',
-      'Led supplier onboarding and supported contract/NDA workflows.',
-      'Implemented and maintained Vendor Managed Inventory (VMI) to improve availability and inventory efficiency.',
-      'Coordinated cross-functional issue resolution (e.g., EOL materials, problem reports, corrective actions).',
+    achievements: [
+      'Qualified and evaluated suppliers for critical aerospace products (parts, components, avionics-related items)',
+      'Managed supplier compliance and documentation in regulated environments (AS9100, FAA, EASA)',
+      'Owned supplier performance tracking (quality, delivery, cost) and KPI reporting for management',
+      'Implemented Vendor Managed Inventory (VMI) improving availability and inventory efficiency',
+      'Coordinated cross-functional issue resolution (EOL materials, problem reports, corrective actions)',
     ],
   },
   {
-    title: 'Project Engineer – Production Methods and Time Studies',
+    title: 'Project Engineer – Production Methods',
     company: 'Codan Medizintechnische Geräte GmbH',
     location: 'Lensahn',
     period: 'Oct 2022 – Mar 2023',
-    responsibilities: [
-      'Supported process and product improvement initiatives, focusing on development and change management within production operations.',
-      'Analyzed and optimized production methods and time studies to improve efficiency, standardization, and throughput.',
-      'Prepared and maintained machine documentation, including operation and maintenance instructions, ensuring compliance with internal and regulatory requirements.',
-      'Coordinated and supported pilot production runs, including trial manufacturing, validation, and approval for series production.',
+    achievements: [
+      'Analyzed and optimized production methods and time studies to improve efficiency and throughput',
+      'Supported process improvement initiatives within development and change management',
+      'Prepared machine documentation ensuring compliance with internal and regulatory requirements',
+      'Coordinated pilot production runs including validation and approval for series production',
     ],
   },
   {
@@ -32,10 +29,10 @@ const experiences = [
     company: 'Codan Medizintechnische Geräte GmbH',
     location: 'Lensahn',
     period: '2022 – 2023',
-    responsibilities: [
-      'Performed and supported calibration activities to ensure measurement accuracy and compliance with quality standards.',
-      'Created and updated operating instructions and safety guidelines to ensure safe and compliant use of production equipment.',
-      'Collaborated with production, quality, and engineering teams to implement process changes and ensure smooth operational execution.',
+    achievements: [
+      'Performed calibration activities ensuring measurement accuracy and quality standards compliance',
+      'Created operating instructions and safety guidelines for production equipment',
+      'Collaborated with production, quality, and engineering teams on process changes',
     ],
   },
   {
@@ -43,22 +40,21 @@ const experiences = [
     company: 'Junge die Bäckerei',
     location: 'Lübeck',
     period: 'Dec 2021 – Jun 2022',
-    responsibilities: [
-      'Supported project software configuration and tailoring to business requirements.',
-      'Monitored and controlled project software usage, data quality, and adherence to project standards.',
-      'Provided software support for new projects, including onboarding and user guidance.',
-      'Tracked cost, delivery dates, and quality KPIs to support on-time, on-budget execution.',
+    achievements: [
+      'Configured project software and tailored systems to business requirements',
+      'Tracked cost, delivery dates, and quality KPIs to support on-time, on-budget execution',
+      'Provided software support for new projects including onboarding and user guidance',
     ],
   },
   {
     title: 'Systems Engineer',
-    company: 'Steinbach Ingenieurtechnik Handelsgesellschaft mbH',
+    company: 'Steinbach Ingenieurtechnik',
     location: 'Ratzeburg',
     period: 'Sep 2020 – Apr 2021',
-    responsibilities: [
-      'Prepared technical documentation for products and processes to ensure traceability and compliance.',
-      'Created CAD designs in SolidWorks to support engineering and manufacturing requirements.',
-      'Improved product designs to increase efficiency, quality, and manufacturability.',
+    achievements: [
+      'Created CAD designs in SolidWorks supporting engineering and manufacturing requirements',
+      'Improved product designs to increase efficiency, quality, and manufacturability',
+      'Prepared technical documentation for products and processes',
     ],
   },
   {
@@ -66,55 +62,49 @@ const experiences = [
     company: 'Mankenberg GmbH',
     location: 'Lübeck',
     period: 'Mar 2019 – Apr 2020',
-    responsibilities: [
-      'Performed precision measurements using an MCA articulated measuring arm.',
-      'Conducted rework cost analysis to identify cost drivers and improvement opportunities.',
-      'Optimized the production process to reduce waste and improve throughput.',
+    achievements: [
+      'Optimized production process of a low-pressure regulator reducing waste and improving throughput',
+      'Conducted rework cost analysis identifying cost drivers and improvement opportunities',
+      'Performed precision measurements using MCA articulated measuring arm',
     ],
   },
 ];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 md:py-28 bg-background">
+    <section id="experience" className="py-8 md:py-10 bg-background border-b border-border print:py-6">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Professional Experience</h2>
-          <p className="section-subtitle">My career journey in engineering and procurement</p>
-        </div>
+        <h2 className="text-lg font-semibold text-foreground mb-6 uppercase tracking-wide">
+          Professional Experience
+        </h2>
 
-        <div className="relative">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
-            <div key={index} className="experience-card">
-              <div className="bg-card rounded-2xl p-6 md:p-8 shadow-card hover:shadow-card-hover transition-all duration-300">
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-foreground mb-1">{exp.title}</h3>
-                    <div className="flex items-center gap-2 text-accent font-medium">
-                      <Briefcase className="w-4 h-4" />
-                      {exp.company}
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-end gap-1 text-sm text-muted-foreground">
-                    <span className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      {exp.period}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-4 h-4" />
-                      {exp.location}
-                    </span>
-                  </div>
+            <div key={index} className="print:break-inside-avoid">
+              {/* Header Row */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                <div>
+                  <h3 className="text-base font-semibold text-foreground">
+                    {exp.title}
+                  </h3>
+                  <p className="text-sm text-accent font-medium">
+                    {exp.company}, {exp.location}
+                  </p>
                 </div>
-                <ul className="space-y-2">
-                  {exp.responsibilities.map((resp, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-muted-foreground">
-                      <span className="w-1.5 h-1.5 bg-accent rounded-full mt-2 flex-shrink-0" />
-                      <span>{resp}</span>
-                    </li>
-                  ))}
-                </ul>
+                <span className="text-sm text-muted-foreground font-medium whitespace-nowrap">
+                  {exp.period}
+                </span>
               </div>
+              
+              {/* Achievements */}
+              <ul className="space-y-1 ml-4">
+                {exp.achievements.map((achievement, idx) => (
+                  <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                    <span className="w-1 h-1 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

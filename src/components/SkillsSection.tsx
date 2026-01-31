@@ -1,129 +1,70 @@
-import { Code, FileCheck, Globe } from 'lucide-react';
+const technicalSkills = ['VBA-Excel', 'SolidWorks', 'MS Project', 'Visio', 'CAD Software'];
 
-const technicalSkills = [
-  'VBA-Excel',
-  'CAD Software',
-  'SolidWorks',
-  'MS Project',
-  'Visio',
-];
-
-const certifications = [
-  'ISO 9001',
-  'Regulation (EU) 2017/745',
-  'FDA QSIT',
-  'DIN EN ISO 13485',
-  'AS9100',
-  'FAA/EASA Compliance',
-];
+const standards = ['AS9100', 'ISO 9001', 'FAA/EASA Compliance', 'DIN EN ISO 13485', 'FDA QSIT', 'EU 2017/745'];
 
 const languages = [
-  { name: 'German', level: 5, label: 'Native' },
-  { name: 'Turkish', level: 5, label: 'Native' },
-  { name: 'English', level: 4, label: 'Professional' },
-  { name: 'French', level: 2, label: 'Basic' },
+  { name: 'German', level: 'Native' },
+  { name: 'Turkish', level: 'Native' },
+  { name: 'English', level: 'Professional' },
+  { name: 'French', level: 'Basic' },
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 md:py-28 bg-section-gradient">
+    <section id="skills" className="py-8 md:py-10 bg-background border-b border-border print:py-6">
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="section-title">Skills & Expertise</h2>
-          <p className="section-subtitle">Technical proficiencies and certifications</p>
-        </div>
+        <h2 className="text-lg font-semibold text-foreground mb-4 uppercase tracking-wide">
+          Skills & Qualifications
+        </h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6">
           {/* Technical Skills */}
-          <div className="bg-card rounded-2xl p-8 shadow-card">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                <Code className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Technical Skills</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
+          <div>
+            <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">
+              Technical Skills
+            </h3>
+            <div className="flex flex-wrap gap-2">
               {technicalSkills.map((skill) => (
-                <span key={skill} className="skill-tag">
+                <span 
+                  key={skill} 
+                  className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded"
+                >
                   {skill}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Certifications & Standards */}
-          <div className="bg-card rounded-2xl p-8 shadow-card">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                <FileCheck className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Standards & Compliance</h3>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {certifications.map((cert) => (
-                <span key={cert} className="skill-tag">
-                  {cert}
+          {/* Standards & Compliance */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">
+              Standards & Compliance
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {standards.map((standard) => (
+                <span 
+                  key={standard} 
+                  className="text-xs px-2 py-1 bg-secondary text-secondary-foreground rounded"
+                >
+                  {standard}
                 </span>
               ))}
             </div>
           </div>
 
           {/* Languages */}
-          <div className="bg-card rounded-2xl p-8 shadow-card md:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                <Globe className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground">Languages</h3>
-            </div>
-            <div className="space-y-4">
+          <div>
+            <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">
+              Languages
+            </h3>
+            <div className="space-y-1">
               {languages.map((lang) => (
-                <div key={lang.name}>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="font-medium text-foreground">{lang.name}</span>
-                    <span className="text-sm text-muted-foreground">{lang.label}</span>
-                  </div>
-                  <div className="flex gap-1">
-                    {[1, 2, 3, 4, 5].map((level) => (
-                      <div
-                        key={level}
-                        className={`h-2 flex-1 rounded-full ${
-                          level <= lang.level ? 'bg-accent' : 'bg-border'
-                        }`}
-                      />
-                    ))}
-                  </div>
+                <div key={lang.name} className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">{lang.name}</span>
+                  <span className="text-xs text-muted-foreground/70">{lang.level}</span>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Industry Keywords */}
-        <div className="mt-12 bg-card rounded-2xl p-8 shadow-card">
-          <h3 className="text-xl font-semibold text-foreground mb-6 text-center">Industry Expertise</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {[
-              'Aerospace Procurement',
-              'Supplier Qualification',
-              'Performance Management',
-              'KPI Reporting',
-              'Vendor Managed Inventory',
-              'Cross-functional Coordination',
-              'Production Methods',
-              'Time Studies',
-              'Process Optimization',
-              'Quality Management',
-              'Regulatory Compliance',
-              'Technical Documentation',
-            ].map((keyword) => (
-              <span
-                key={keyword}
-                className="px-4 py-2 bg-primary/5 text-primary rounded-lg text-sm font-medium"
-              >
-                {keyword}
-              </span>
-            ))}
           </div>
         </div>
       </div>
