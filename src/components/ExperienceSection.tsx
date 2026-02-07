@@ -72,39 +72,51 @@ const experiences = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-8 md:py-10 bg-background border-b border-border print:py-6">
+    <section id="experience" className="content-section bg-muted/40 print:py-6 print:bg-white">
       <div className="section-container">
-        <h2 className="text-lg font-semibold text-foreground mb-6 uppercase tracking-wide">
-          Professional Experience
-        </h2>
+        <h2 className="section-title">Experience</h2>
 
-        <div className="space-y-6">
+        <div className="space-y-10">
           {experiences.map((exp, index) => (
-            <div key={index} className="print:break-inside-avoid">
-              {/* Header Row */}
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
-                <div>
-                  <h3 className="text-base font-semibold text-foreground">
-                    {exp.title}
-                  </h3>
-                  <p className="text-sm text-accent font-medium">
-                    {exp.company}, {exp.location}
-                  </p>
-                </div>
-                <span className="text-sm text-muted-foreground font-medium whitespace-nowrap">
-                  {exp.period}
-                </span>
-              </div>
+            <div key={index} className="relative print:break-inside-avoid">
+              {/* Timeline connector */}
+              {index < experiences.length - 1 && (
+                <div className="absolute left-[5px] top-8 bottom-[-2.5rem] w-px bg-border print:hidden" />
+              )}
               
-              {/* Achievements */}
-              <ul className="space-y-1 ml-4">
-                {exp.achievements.map((achievement, idx) => (
-                  <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                    <span className="w-1 h-1 bg-muted-foreground/50 rounded-full mt-2 flex-shrink-0" />
-                    <span>{achievement}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="grid gap-4">
+                {/* Header Row */}
+                <div className="flex gap-4">
+                  {/* Timeline dot */}
+                  <div className="relative flex-shrink-0 print:hidden">
+                    <div className="w-3 h-3 rounded-full bg-accent mt-1.5" />
+                  </div>
+                  
+                  <div className="flex-1 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
+                    <div>
+                      <h3 className="text-base font-semibold text-foreground">
+                        {exp.title}
+                      </h3>
+                      <p className="text-sm text-accent font-medium">
+                        {exp.company} · {exp.location}
+                      </p>
+                    </div>
+                    <span className="text-sm text-muted-foreground font-mono whitespace-nowrap">
+                      {exp.period}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Achievements */}
+                <ul className="ml-7 space-y-2 print:ml-0">
+                  {exp.achievements.map((achievement, idx) => (
+                    <li key={idx} className="text-sm text-muted-foreground flex items-start gap-3">
+                      <span className="w-1 h-1 bg-muted-foreground/40 rounded-full mt-2 flex-shrink-0" />
+                      <span className="leading-relaxed">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

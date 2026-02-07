@@ -15,16 +15,20 @@ const competencies = [
 
 const CoreCompetencies = () => {
   return (
-    <section className="py-8 md:py-10 bg-background border-b border-border print:py-6">
+    <section className="content-section bg-background print:py-6">
       <div className="section-container">
-        <h2 className="text-lg font-semibold text-foreground mb-4 uppercase tracking-wide">
-          Core Competencies
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-2">
+        <h2 className="section-title">Core Competencies</h2>
+        
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           {competencies.map((skill) => (
-            <div key={skill} className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
-              {skill}
+            <div 
+              key={skill} 
+              className="group flex items-center gap-3 p-3 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+              <span className="text-sm text-foreground/80 group-hover:text-foreground transition-colors">
+                {skill}
+              </span>
             </div>
           ))}
         </div>

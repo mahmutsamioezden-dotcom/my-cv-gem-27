@@ -1,10 +1,15 @@
 const Footer = () => {
   return (
-    <footer className="py-4 bg-muted/50 border-t border-border print:hidden">
+    <footer className="py-6 bg-background border-t border-border print:hidden">
       <div className="section-container">
-        <p className="text-xs text-muted-foreground text-center">
-          © {new Date().getFullYear()} Mahmut Sami Özden • Principal Specialist, Procurement
-        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
+          <p>
+            © {new Date().getFullYear()} Mahmut Sami Özden
+          </p>
+          <p className="text-xs">
+            Principal Specialist, Procurement · Lübeck, Germany
+          </p>
+        </div>
       </div>
     </footer>
   );
