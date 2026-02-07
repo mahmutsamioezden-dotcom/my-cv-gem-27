@@ -4,6 +4,7 @@ const competencies = [
   'Vendor Managed Inventory (VMI)',
   'Cross-functional Coordination',
   'AS9100 / FAA / EASA Compliance',
+  'Civil & Military Aviation Law',
   'Process Optimization',
   'Technical Documentation',
   'Time Studies & Methods',
